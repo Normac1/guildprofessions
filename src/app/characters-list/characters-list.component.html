@@ -1,0 +1,25 @@
+<h2 class="text-center m-5">Character List</h2>
+ 
+   <table class="table table-striped table-bordered">
+       <thead>
+           <tr>
+               <th>Name</th>
+               <th>Profession A</th>
+               <th>Profession B</th>
+           </tr>
+       </thead>
+ 
+       <tbody>
+           <tr *ngFor="let character of characters$ | async">
+               <td>{{character.name}}</td>
+               <td>{{character.professionA}}</td>
+               <td>{{character.professionB}}</td>
+               <td>
+                   <button class="btn btn-primary me-1" [routerLink]="['edit/', character._id]">Edit</button>
+                   <button class="btn btn-danger" (click)="deleteCharacter(character._id || '')">Delete</button>
+               </td>
+           </tr>
+       </tbody>
+   </table>
+ 
+   <button class="btn btn-primary mt-3" [routerLink]="['new']">Add a New Character</button>

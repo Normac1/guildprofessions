@@ -1,0 +1,124 @@
+<form
+  class="character-form"
+  autocomplete="off"
+  [formGroup]="characterForm"
+  (ngSubmit)="submitForm()"
+>
+  <div class="form-floating mb-3">
+    <input
+      class="form-control"
+      type="text"
+      id="name"
+      formControlName="name"
+      placeholder="Name"
+      required
+    />
+    <label for="name">Name</label>
+  </div>
+
+  <div
+    *ngIf="name.invalid && (name.dirty || name.touched)"
+    class="alert alert-danger"
+  >
+    <div *ngIf="name.errors?.['required']">Name is required.</div>
+    <div *ngIf="name.errors?.['minlength']">
+      Name must be at least 3 characters long.
+    </div>
+  </div>
+
+  <div class="mb-4">
+    <label for="profession-select-a" class="mb-1" >First Profession</label>
+    <select class="form-select mb-2" formControlName="professionA" name="profession-select-a" id="profession-select-a">
+        <option value="default" selected>Please select your first profession</option>
+        <option value="Alchemy">Alchemy</option>
+        <option value="Blacksmithing">Blacksmithing</option>
+        <option value="Enchanting">Enchanting</option>
+        <option value="Engineering">Engineering</option>
+        <option value="Herbalism">Herbalism</option>
+        <option value="Inscription">Inscription</option>
+        <option value="Jewelcrafting">Jewelcrafting</option>
+        <option value="Leatherworking">Leatherworking</option>
+        <option value="Mining">Mining</option>
+        <option value="Skinning">Skinning</option>
+        <option value="Tailoring">Tailoring</option>
+    </select>
+
+    <div>
+      <select name="test" id="test" formControlName="professionSpecializationA">
+        <option value="default" selected>
+          Please select your first profession specialization if applicable
+        </option>
+        <option value="Potion Master">Potion Master</option>
+        <option value="Elixir Master">Elixir Master</option>
+        <option value="Transmutation Master">Transmutation Master</option>
+        <option value="Armorsmith">Armorsmith</option>
+        <option value="Weaponsmith">Weaponsmith</option>
+        <option value="Goblin Engineering">Goblin Engineering</option>
+        <option value="Gnomish Engineering">Gnomish Engineering</option>
+        <option value="Dragonscale Leatherworking">
+          Dragonscale Leatherworking
+        </option>
+        <option value="Elemental Leatherworking">
+          Elemental Leatherworking
+        </option>
+        <option value="Tribal Leatherworking">Tribal Leatherworking</option>
+        <option value="Mooncloth Tailor">Mooncloth Tailor</option>
+        <option value="Shadoweave Tailor">Shadoweave Tailor</option>
+        <option value="Spellfire Tailor">Spellfire Tailor</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="mb-4">
+    <label for="profession-select-a" class="mb-1">Second Profession</label>
+    <div class="form-floating mb-3">
+      <select name="profession-select-b" id="profession-select-b" formControlName="professionB">
+        <option value="default" selected>Please select your second profession</option>
+        <option value="Alchemy">Alchemy</option>
+        <option value="Blacksmithing">Blacksmithing</option>
+        <option value="Enchanting">Enchanting</option>
+        <option value="Engineering">Engineering</option>
+        <option value="Herbalism">Herbalism</option>
+        <option value="Inscription">Inscription</option>
+        <option value="Jewelcrafting">Jewelcrafting</option>
+        <option value="Leatherworking">Leatherworking</option>
+        <option value="Mining">Mining</option>
+        <option value="Skinning">Skinning</option>
+        <option value="Tailoring">Tailoring</option>
+      </select>
+    </div>
+
+    <div>
+      <select name="test" id="test" formControlName="professionSpecializationB">
+        <option value="default" selected>
+          Please select your second profession specialization if applicable
+        </option>
+        <option value="Potion Master">Potion Master</option>
+        <option value="Elixir Master">Elixir Master</option>
+        <option value="Transmutation Master">Transmutation Master</option>
+        <option value="Armorsmith">Armorsmith</option>
+        <option value="Weaponsmith">Weaponsmith</option>
+        <option value="Goblin Engineering">Goblin Engineering</option>
+        <option value="Gnomish Engineering">Gnomish Engineering</option>
+        <option value="Dragonscale Leatherworking">
+          Dragonscale Leatherworking
+        </option>
+        <option value="Elemental Leatherworking">
+          Elemental Leatherworking
+        </option>
+        <option value="Tribal Leatherworking">Tribal Leatherworking</option>
+        <option value="Mooncloth Tailor">Mooncloth Tailor</option>
+        <option value="Shadoweave Tailor">Shadoweave Tailor</option>
+        <option value="Spellfire Tailor">Spellfire Tailor</option>
+      </select>
+    </div>
+  </div>
+
+  <button
+    class="btn btn-primary"
+    type="submit"
+    [disabled]="characterForm.invalid"
+  >
+    Add
+  </button>
+</form>
