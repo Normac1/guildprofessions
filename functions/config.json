@@ -1,1 +1,10 @@
-[]
+[
+    {
+        "name": "resetFunc",
+        "private": true
+    },
+    {
+        "name": "confirmFunc",
+        "private": true
+    }
+]
