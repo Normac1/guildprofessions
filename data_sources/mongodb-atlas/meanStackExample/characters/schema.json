@@ -1,0 +1,23 @@
+{
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "name": {
+            "bsonType": "string"
+        },
+        "professionA": {
+            "bsonType": "string"
+        },
+        "professionB": {
+            "bsonType": "string"
+        },
+        "professionSpecializationA": {
+            "bsonType": "string"
+        },
+        "professionSpecializationB": {
+            "bsonType": "string"
+        }
+    },
+    "title": "character"
+}
